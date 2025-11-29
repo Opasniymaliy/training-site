@@ -303,7 +303,7 @@ body {
 
 .search-bar {
     position: sticky;
-    top: 8px;
+    top: 14px;
     z-index: 200;
     display: flex;
     align-items: center;
@@ -330,7 +330,7 @@ body {
 
 /* раскрытая строка поиска */
 .search-bar.open {
-    width: 95%; /* растягиваем плавно */
+    width: 80%; /* растягиваем плавно */
     padding: 6px 16px;
 }
 
@@ -449,3 +449,153 @@ video::-webkit-media-controls-enclosure {
 video::-webkit-media-controls-panel {
     display: none !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== ВЕРХНЯЯ НАВИГАЦИЯ ПО ТРЕНИРОВКАМ ===== */
+
+/* === Плавающий флажок навигации === */
+
+/* === Плавающий флажок навигации === */
+
+.nav-toggle-checkbox {
+  display: none;
+}
+
+/* Кнопка (бургер) */
+/* === Плавающий флажок навигации === */
+
+/* === ФЛАЖОК (кнопка навигации) — стеклянный стиль === */
+.nav-toggle-btn {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 9999;
+  
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* стеклянность */
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    color: #9e4985;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 0;
+  
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  
+    cursor: pointer;
+  
+    transition:
+      transform 0.15s ease,
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease;
+  }
+  
+  .nav-toggle-btn:active {
+    transform: scale(0.92);
+  }
+  
+  /* === Кнопка в открытом состоянии === */
+  .nav-toggle-checkbox:checked + .nav-toggle-btn {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #a343c9;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  
+  
+  /* Выпадающее меню */
+  /* === ПЛАВАЮЩЕЕ МЕНЮ НАВИГАЦИИ (как поиск) === */
+
+.nav-floating-menu {
+    position: fixed;
+    top: 12px;           /* чуть ниже флажка */
+    right: 14px;
+    z-index: 9998;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  
+    padding: 6px 8px;
+  
+    /* стекло как у поиска */
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transform-origin: top right;
+  
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+  /* Когда меню открыто — круг просто сливается с квадратом */
+/* Кнопка, когда меню открыто → полностью прозрачная */
+/* Когда навигация открыта — убираем обводку */
+.nav-toggle-checkbox:checked + .nav-toggle-btn {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+
+
+  /* ссылки внутри меню */
+  .nav-floating-menu a {
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #a343c9;
+    border-radius: 12px;
+  }
+  
+  /* наведение — лёгкий подсвет */
+  .nav-floating-menu a:hover {
+    background: rgba(177, 38, 82, 0.08);
+  }
+  
+  /* открытое состояние */
+  .nav-toggle-checkbox:checked ~ .nav-floating-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  /* Убираем круг у кнопки, когда меню открыто */
+.nav-toggle-checkbox:checked + .nav-toggle-btn {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+

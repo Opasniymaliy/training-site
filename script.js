@@ -78,3 +78,116 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.querySelector('#ex3 .video-side video').playbackRate = 0.7;
   document.querySelector('#ex3 .video-front video').playbackRate = 0.7;
+
+
+
+
+  
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle-checkbox"); // чекбокс флажка
+    const searchBar = document.querySelector(".search-bar");
+    const searchInput = document.querySelector(".search-input");
+    const searchToggle = document.querySelector(".search-toggle");
+    const navLinks = document.querySelectorAll(".nav-floating-menu a");
+  
+    if (!navToggle) return;
+  
+    // === 1. ОТКРЫВАЕМ ПОИСК → ЗАКРЫВАЕМ НАВИГАЦИЮ ===
+    if (searchToggle) {
+      searchToggle.addEventListener("click", () => {
+        navToggle.checked = false; // свернули флажок
+      });
+    }
+  
+    if (searchInput) {
+      searchInput.addEventListener("focus", () => {
+        navToggle.checked = false; // тоже свернуть, если сразу тыкнули в поле
+      });
+    }
+  
+    // === 2. ОТКРЫВАЕМ НАВИГАЦИЮ → ЗАКРЫВАЕМ ПОИСК ===
+    navToggle.addEventListener("change", () => {
+      if (navToggle.checked) {
+        // навигация открыта — сворачиваем поиск
+        if (searchBar) searchBar.classList.remove("open");
+        if (searchInput) {
+          searchInput.classList.remove("open");
+          searchInput.value = "";
+          searchInput.blur();
+        }
+      }
+    });
+  
+    // === 3. КЛИК ПО ПУНКТУ НАВИГАЦИИ → ЗАКРЫВАЕМ НАВИГАЦИЮ ===
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navToggle.checked = false;
+      });
+    });
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector("#nav-toggle");            // чекбокс навигации
+    const navMenu   = document.querySelector(".nav-floating-menu");     // меню
+    const searchBar = document.querySelector(".search-bar");
+    const searchInput = document.querySelector(".search-input");
+    const searchToggle = document.querySelector(".search-toggle");
+    const navLinks = document.querySelectorAll(".nav-floating-menu a");
+
+    // --- Если элементы не нашли (страница без них) — выходим ---
+    if (!navToggle || !navMenu) return;
+
+    // ============================================================
+    // 1. Открыли поиск → закрываем навигацию
+    // ============================================================
+    if (searchToggle) {
+        searchToggle.addEventListener("click", () => {
+            navToggle.checked = false;
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener("focus", () => {
+            navToggle.checked = false;
+        });
+    }
+
+    // ============================================================
+    // 2. Клик по пустому месту — закрыть меню
+    // ============================================================
+    document.addEventListener("click", (e) => {
+        const clickedInsideMenu = navMenu.contains(e.target);
+        const clickedToggle = e.target.closest(".nav-toggle-btn");
+
+        if (!clickedInsideMenu && !clickedToggle) {
+            navToggle.checked = false;
+        }
+    });
+
+    // ============================================================
+    // 3. Клик по пункту меню → закрыть меню
+    // ============================================================
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navToggle.checked = false;
+        });
+    });
+
+    // ============================================================
+    // 4. Открыли меню → закрываем поиск
+    // ============================================================
+    navToggle.addEventListener("change", () => {
+        if (navToggle.checked) {
+            if (searchBar) searchBar.classList.remove("open");
+            if (searchInput) {
+                searchInput.classList.remove("open");
+                searchInput.value = "";
+                searchInput.blur();
+            }
+        }
+    });
+});
+
+
+
+
+
