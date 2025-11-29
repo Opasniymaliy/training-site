@@ -426,3 +426,26 @@ body {
     width: 55%;        /* можно менять: 100%, 80%, 60% */
     max-width: 400px;  /* ограничение, чтобы красиво */
 }
+
+/* Центровка, если в блоке одно видео */
+.single-video {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Для одного видео убираем grid и ставим обычный flex */
+.single-video .video-card {
+    max-width: 280px; /* можно изменить */
+}
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
