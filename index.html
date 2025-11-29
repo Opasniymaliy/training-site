@@ -9,20 +9,30 @@
 
 <body>
   <main class="page">
-
+    <div class="search-bar">
+        <button class="search-toggle">
+            <img src="images/lupa.png" alt="Поиск">
+          
+        </button>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Найти упражнение..."
+        />
+      </div>
     <!-- ШАПКА СТРАНИЦЫ -->
     <header class="page-header">
       <h1 class="page-title">
         Тренировка <span class="page-number">1</span>
       </h1>
     </header>
-
+   
     <!-- ===== БЛОК УПРАЖНЕНИЯ (ШАБЛОН) ===== -->
-    <section class="exercise">
+    <section class="exercise" id="ex1">
 
       <!-- ВЕРХНИЙ РЯД -->
       <div class="exercise-top">
-        <div class="exercise-label">2 упражнение</div>
+        <div class="exercise-label">1 упражнение</div>
         <div class="exercise-top-type">Низ тела &amp; пресс</div>
       </div>
 
@@ -30,13 +40,13 @@
       <div class="exercise-main">
 
         <div>
-          <div class="exercise-title">Румынская тяга</div>
+          <div class="exercise-title">ПРИСЕДАНИЯ С ГАНТЕЛЯМИ</div>
           <div class="exercise-meta">3 подхода по 12–15 повторений</div>
         </div>
 
         <div class="exercise-muscles-box">
           <div class="exercise-muscles-title">Группы мышц</div>
-          <div class="exercise-muscles-text">Ягодицы, бицепс бедра</div>
+          <div class="exercise-muscles-text">Ягодицы, квадрицепсы</div>
         </div>
 
       </div>
@@ -47,20 +57,21 @@
         <div>
           <div class="block-title">Исходное положение:</div>
           <ul class="list">
-            <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
-            <li><span class="bullet"></span><span>Подсядь, возьми штангу хватом чуть шире плеч.</span></li>
-            <li><span class="bullet"></span><span>Спина прямая, корпус слегка наклонён вперёд.</span></li>
-            <li><span class="bullet"></span><span>Стопы на ширине таза, носки смотрят вперёд.</span></li>
+            <li><span class="bullet"></span><span>Ноги на ширине плеч или чуть шире (в идеале можешь поставить ноги на расстоянии от ширины таза до ширины плеч друг от друга).</span></li>
+            <li><span class="bullet"></span><span>Носки стоп смотрят прямо или даже чуть чуть развернуты в стороны</span></li>
+            <li><span class="bullet"></span><span>Ноги согнуты немного в коленных суставах, спина ровная!</span></li>
+            <li><span class="bullet"></span><span>Прямые руки, в руках никакого движения</span></li>
+            <li><span class="bullet"></span><span>Взгляд прямо перед собой</span></li>
           </ul>
         </div>
 
         <div>
           <div class="block-title">Техника выполнения:</div>
           <ul class="list">
-            <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
-            <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
-            <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени.</span></li>
-            <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение, напрягая ягодицы.</span></li>
+            <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад (будто хочешь сесть на стул)</span></li>
+            <li><span class="bullet"></span><span>Одновременно сгибаем колени, сохраняя спину прямой</span></li>
+            <li><span class="bullet"></span><span>Опускаемся до параллели с полом или чуть выше</span></li>
+            <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
           </ul>
         </div>
 
@@ -72,34 +83,1244 @@
         <!-- Видео 1: спереди -->
         <div class="video-card video-front">
           <video
-            src="videos/videos1.MOV"
+            src="videos/videos5.MP4"
             muted
             playsinline
             loop
             autoplay
             controls
           ></video>
-          <div class="video-caption">Положение</div>
+          <div class="video-caption">Вид спереди</div>
         </div>
 
         <!-- Видео 2: сбоку -->
         <div class="video-card video-side">
           <video
-            src="videos/videos2.MOV"
+            src="videos/videos6.MP4"
             muted
             playsinline
             loop
             autoplay
             controls
           ></video>
-          <div class="video-caption">Техника</div>
+          <div class="video-caption">Вид сбоку</div>
         </div>
 
       </div>
 
     </section>
+
+
+    <section class="exercise" id="ex2">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">2 упражнение</div>
+          <div class="exercise-top-type">Низ тела &amp; пресс</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">Румынская тяга</div>
+            <div class="exercise-meta">3 подхода по 12–15 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Ягодицы, бицепс бедра</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex3">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">3 упражнение</div>
+          <div class="exercise-top-type">Низ тела &amp; пресс</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ЯГОДИЧНЫЙ МОСТ</div>
+            <div class="exercise-meta">3 подхода по 15-20 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Ягодицы</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Начнем с ног. Стопы ставим так, чтобы в верхней точке угол в коленном суставе был 90 грудусов (то есть пятка и колено не должны вставать в одну линию) </span></li>
+              <li><span class="bullet"></span><span></span>Нижний край лопатки находится на краю спинки</li>
+              <li><span class="bullet"></span><span>Шея - продолжение позвоночника</span></li>
+              <li><span class="bullet"></span><span>Опускай валик, он должен оказаться на сгибе тазобедренного сустава</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Перед началом движения сделай лёгкий вдох и слегка напряги пресс — это стабилизирует таз</span></li>
+              <li><span class="bullet"></span><span>Начинай движение с подъёма таза, направляя усилие именно в ягодицы, а не в поясницу</span></li>
+              <li><span class="bullet"></span><span></span>Поднимай таз до тех пор, пока корпус и бёдра не образуют прямую линию — но без прогиба в пояснице</li>
+              <li><span class="bullet"></span><span>В верхней точке сожми ягодицы и задержись на 1–2 секунды</span></li>
+              <li><span class="bullet"></span><span>Опускай таз медленно и контролируемо, не “роняя” его вниз</span></li>
+              <li><span class="bullet"></span><span>Всё движение выполняй плавно только в тазобедренном суставе! без рывков, сохраняй напряжение ягодиц на протяжении всего подхода</span></li>
+              <li><span class="bullet"></span><span>Также колени не должны "ходить" в разные стороны</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos4.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos3.MP4"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex4">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">4 упражнение</div>
+          <div class="exercise-top-type">Низ тела &amp; пресс</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">СКРУЧИВАНИЯ</div>
+            <div class="exercise-meta">3 подхода по 15-20 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Верхний пресс</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Ляг на спину, поясница прижата к полу</span></li>
+              <li><span class="bullet"></span><span>Колени согнуты, стопы стоят на полу на ширине таза</span></li>
+              <li><span class="bullet"></span><span>Руки за головой или на груди, локти направлены в стороны</span></li>
+              <li><span class="bullet"></span><span>Подбородок слегка отведён от груди, шея расслаблена</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Начинай движение с подъёма плеч и верхней части спины, а не рывком за счёт шеи</span></li>
+              <li><span class="bullet"></span><span>Старайся тянуться грудной клеткой вверх, а не головой вперёд. Шея не должна вообще напрягаться!!</span></li>
+              <li><span class="bullet"></span><span>На верхней точке сделай паузу 1 секунду и полностью напряги пресс</span></li>
+              <li><span class="bullet"></span><span>Опускайся медленно и контролируемо, оставляя поясницу прижатой к полу</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row video-single">
+            <div class="video-card video-front">
+                <video
+                  src="videos/videos8.MP4"
+                  muted
+                  playsinline
+                  loop
+                  autoplay
+                  controls
+                ></video>
+                <div class="video-caption">Техника</div>
+            </div>
+          </div>
+          
+  
+    </section>
     <!-- ===== /БЛОК УПРАЖНЕНИЯ ===== -->
 
+    <section class="exercise" id="ex5">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">5 упражнение</div>
+          <div class="exercise-top-type">Низ тела &amp; пресс</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ПЛАНКА</div>
+            <div class="exercise-meta">2-3 подхода по 30-40 сек. (или меньше 20-30 сек.) смотри по ощущениям</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Кор</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Поставь предплечья на пол под плечевыми суставами</span></li>
+              <li><span class="bullet"></span><span>Ноги выпрямлены, стопы на ширине таза</span></li>
+              <li><span class="bullet"></span><span>Тело в прямой линии от плеч до пяток</span></li>
+              <li><span class="bullet"></span><span>Укрепи пресс и слегка подкрути таз, чтобы убрать прогиб в пояснице</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Держи взгляд в пол</span></li>
+              <li><span class="bullet"></span><span>Не допускай провисания таза вниз или поднятия попы вверх</span></li>
+             
+              <li><span class="bullet"></span><span>Плотно напрягай пресс и ягодицы на протяжении всего упражнения</span></li>
+              <li><span class="bullet"></span><span>Дыши ровно и спокойно, не задерживай дыхание.</span></li>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row videos-row--single">
+            <!-- Видео 1 -->
+            <div class="video-card video-horizontal">
+              <video
+                src="videos/videos7.MP4"
+                muted
+                playsinline
+                loop
+                autoplay
+                controls
+              ></video>
+              <div class="video-caption">Вид сбоку</div>
+            </div>
+          </div>
+          
+  
+    </section>
+
+      <h2 class="section-title">ТРЕНИРОВКА 2</h2>
+
+    <section class="exercise" id="ex6">
+        
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">1 упражнение</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ТЯГА ВЕРХНЕГО БЛОКА</div>
+            <div class="exercise-meta">3 подхода по 12–15 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Широчайщие мышцы спины</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+
+    <section class="exercise" id="ex7">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">2 упражнение</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ТЯГА ГОРИЗОНТАЛЬНОГО БЛОКА</div>
+            <div class="exercise-meta">3 подхода по 12–15 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Середина спины</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+
+    <section class="exercise" id="ex8">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">3 упражнение (1)</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ЖИМ ГАНТЕЛЕЙ СИДЯ</div>
+            <div class="exercise-meta">3 подхода по 10–12 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Передние дельты плеч</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+
+    <section class="exercise" id="ex9">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">3 упражнение (2)</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ОТЖИМАНИЯ ОТ СКАМЬИ</div>
+            <div class="exercise-meta">3 подхода по 10-12 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Трицепс, грудь</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex10">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">4 упражнение</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">РАЗВЕДЕНИЕ ГАНТЕЛЕЙ В СТОРОНЫ</div>
+            <div class="exercise-meta">2 подхода по 12–15 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Средние дельты плеч</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex11">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">5 упражнение</div>
+          <div class="exercise-top-type">Верх тела &amp; осанка</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ПОДЪЕМ НОГ ЛЕЖА</div>
+            <div class="exercise-meta">3 подхода по 12–15 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Низ пресса</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+      <h2 class="section-title">ОПЦИОНАЛЬНЫЙ ДЕНЬ</h2>
+
+
+    <section class="exercise" id="ex12">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">1 упражнение</div>
+          <div class="exercise-top-type">Фокус &amp; интенсив</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ВЫПАДЫ НА МЕСТЕ</div>
+            <div class="exercise-meta">2 подхода по 10–12 повторений (на ногу)</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">текст</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex13">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">2 упражнение</div>
+          <div class="exercise-top-type">Фокус &amp; интенсив</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">МАХИ НОГОЙ НАЗАД</div>
+            <div class="exercise-meta">3 подхода по 12–15 повторений (на ногу)</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Верх ягодиц</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex14">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">3 упражнение</div>
+          <div class="exercise-top-type">Фокус &amp; интенсив</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ЯГОДИЧНЫЙ МОСТ</div>
+            <div class="exercise-meta">3 подхода по 15–20 повторений</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Ягодицы</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex15">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">4 упражнение</div>
+          <div class="exercise-top-type">Фокус &amp; интенсив</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">ГИПЕРЭКСТЕНЗИЯ</div>
+            <div class="exercise-meta">2 подхода по 12–15 повторений (</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">Разгибатели спины, ягодицы</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
+
+
+    <section class="exercise" id="ex16">
+
+        <!-- ВЕРХНИЙ РЯД -->
+        <div class="exercise-top">
+          <div class="exercise-label">5 упражнение</div>
+          <div class="exercise-top-type">Фокус &amp; интенсив</div>
+        </div>
+  
+        <!-- НАЗВАНИЕ + ГРУППЫ МЫШЦ -->
+        <div class="exercise-main">
+  
+          <div>
+            <div class="exercise-title">КАРДИО</div>
+            <div class="exercise-meta">15-20 минут</div>
+          </div>
+  
+          <div class="exercise-muscles-box">
+            <div class="exercise-muscles-title">Группы мышц</div>
+            <div class="exercise-muscles-text">-</div>
+          </div>
+  
+        </div>
+  
+        <!-- ИСХОДНОЕ ПОЛОЖЕНИЕ + ТЕХНИКА -->
+        <div class="exercise-grid">
+  
+          <div>
+            <div class="block-title">Исходное положение:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>Встань ровно, лопатки сведены.</span></li>
+              <li><span class="bullet"></span><span>Подсядь максимально низко, беремся руками наширине плеч за штангу и встаем с ровной спиной!</span></li>
+              <li><span class="bullet"></span><span>Спереди должна помещаться между ногами одна стопа, ноги смотрят прямо.</span></li>
+              <li><span class="bullet"></span><span>Запомни, все, что ниже колена должно быть «забетонировано».</span></li>
+            </ul>
+          </div>
+  
+          <div>
+            <div class="block-title">Техника выполнения:</div>
+            <ul class="list">
+              <li><span class="bullet"></span><span>На вдохе плавно отводи таз назад.</span></li>
+              <li><span class="bullet"></span><span>Наклоняй корпус с прямой спиной.</span></li>
+              <li><span class="bullet"></span><span>Опускай штангу вдоль ног до середины голени (чтоб спина была параллельна полу).</span></li>
+              <li><span class="bullet"></span><span>На выдохе возвращайся в исходное положение.</span></li>
+            </ul>
+          </div>
+  
+        </div>
+  
+        <!-- ВИДЕО (2 шт.) -->
+        <div class="videos-row">
+  
+          <!-- Видео 1: спереди -->
+          <div class="video-card video-front">
+            <video
+              src="videos/videos1.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Положение</div>
+          </div>
+  
+          <!-- Видео 2: сбоку -->
+          <div class="video-card video-side">
+            <video
+              src="videos/videos2.MOV"
+              muted
+              playsinline
+              loop
+              autoplay
+              controls
+            ></video>
+            <div class="video-caption">Техника</div>
+          </div>
+  
+        </div>
+  
+    </section>
   </main>
+  <script src="script.js"></script>
+  
 </body>
 </html>

@@ -2,29 +2,29 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     background: #f9f4fb;
     color: #3a163c;
     display: flex;
     justify-content: center;
-  }
-  
-  /* Общая обёртка */
-  .page {
+}
+
+/* Общая обёртка */
+.page {
     width: 100%;
     max-width: 768px;
-    padding: 4px 16px 20px;
-  }
-  
-  /* Шапка */
-  .page-header {
+    padding: 0 16px 12px;   /* меньше сверху и снизу */
+}
+
+/* Шапка */
+.page-header {
     margin-bottom: 10px;
-  }
-  
-  .page-title {
+}
+
+.page-title {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 26px;
@@ -35,70 +35,72 @@
     display: flex;
     align-items: center;
     gap: 6px;
-  }
-  
-  .page-number {
+}
+
+.page-number {
     font-weight: 800;
     font-size: 26px;
     color: #b12652;
-  }
-  
-  /* Карточка упражнения */
-  .exercise {
+}
+
+/* Карточка упражнения */
+.exercise {
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    padding: 8px 14px 12px;
-    margin-bottom: 14px;
-  }
-  
-  /* Верхняя строка */
-  .exercise-top {
+    padding: 6px 12px 8px;   /* уменьшили */
+    margin-bottom: 8px;      /* уменьшили */
+}
+
+/* Верхняя строка */
+.exercise-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
-  }
-  
-  .exercise-label {
+    margin-bottom: 6px;
+}
+
+.exercise-label {
     background: #3b0014;
     color: #fff;
     padding: 3px 14px;
     border-radius: 999px;
     font-size: 10px;
     text-transform: uppercase;
-  }
-  
-  .exercise-top-type {
+}
+
+.exercise-top-type {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 500;
     color: #c35b86;
-  }
-  
-  /* Заголовки + мышцы */
-  .exercise-main {
+}
+
+/* Заголовки + мышцы */
+.exercise-main {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     column-gap: 24px;
     row-gap: 6px;
     align-items: flex-start;
     margin-bottom: 10px;
-  }
-  
-  @media (max-width: 540px) {
+}
+
+@media (max-width: 540px) {
     .exercise-main {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  }
-  
-  .exercise-title {
+}
+
+.exercise-title {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 17px;
     line-height: 1.1;
-    margin-bottom: 6px; /* чуть больше места под линию */
+    margin-bottom: 6px;
     position: relative;
+    display: inline-block;      /* ширина = ширина текста */
+    padding-bottom: 2px;        /* чтобы линия не прилипала к буквам */
   }
   
   /* декоративная полоска под заголовком упражнения */
@@ -106,124 +108,168 @@
     content: "";
     position: absolute;
     left: 0;
+    right: 0;                   /* тянем до конца самого заголовка */
     bottom: -3px;
-    width: 167px;
     height: 3px;
     background: #c35b86;
     border-radius: 2px;
   }
   
-  .exercise-meta {
+
+.exercise-meta {
     font-size: 12px;
     color: #b58db8;
-  }
-  
-  .exercise-muscles-title {
+}
+
+.exercise-muscles-title {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 14px;
     margin-bottom: 3px;
-  }
-  
-  .exercise-muscles-text {
+}
+
+.exercise-muscles-text {
     font-size: 13px;
     color: #b58db8;
-  }
-  
-  /* Блоки текста */
-  .exercise-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  
-  @media (max-width: 540px) {
+}
+
+/* Блоки текста */
+.exercise-grid {
+    margin-bottom: 0;      /* меньше */
+    margin-top: -2px;      /* подняли чуть вверх */
+}
+
+@media (max-width: 540px) {
     .exercise-grid {
-      grid-template-columns: 1fr;
-      gap: 8px;
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
-  }
-  
-  .block-title {
+}
+
+.block-title {
     font-weight: 700;
     font-size: 13px;
     margin-bottom: 4px;
     text-transform: uppercase;
-  }
-  
-  .list {
+}
+
+.list {
     list-style: none;
     font-size: 13px;
     color: #5b3a5b;
-  }
-  
-  .list li {
+    padding-left: 0;
+    margin: 0;
+}
+
+.list li {
     display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    margin-bottom: 1px;
-  }
-  
-  .bullet {
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    line-height: 1.25;
+}
+
+.bullet {
     width: 7px;
     height: 7px;
-    border-radius: 999px;
-    background: #b12652cc; /* мягкий бордовый */
-    margin-top: 6px;
-  }
-  
-  /* Видео */
-  .videos-row {
+    border-radius: 50%;
+    background: #b12652;
+    flex-shrink: 0;
+}
+
+/* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео */
+.videos-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px; /* чуть больше, выглядит дороже */
-    margin-top: 6px;
-    padding-top: 8px;
+    gap: 10px;        /* уменьшили */
+    margin-top: 2px;  /* подняли */
+    padding-top: 4px; /* тоньше */
     border-top: 1px solid rgba(0,0,0,0.06);
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .videos-row {
-      gap: 8px;
+        margin-top: 2px;
+        padding-top: 4px;
     }
-  }
-  
-  /* Левое видео – чуть увеличено и поднято */
-  .video-front video {
+}
+
+/* ==== ИНДИВИДУАЛЬНЫЕ НАСТРОЙКИ ВИДЕО ==== */
+
+/* ex3 — ЯГОДИЧНЫЙ МОСТ */
+
+/* Левое видео (Положение) */
+#ex3 .video-front video {
+    transform: scale(1.07) translateY(-7px) translateX(-1px);
+    object-position: 111% center;
+}
+
+/* Правое видео (Техника) */
+#ex3 .video-side video {
+    transform: scale(1.08) translateY(-4px) translateX(-6px);
+    object-position: 60% center;
+}
+
+#ex1 .video-front video {
+    transform: scale(1.07) translateY(-7px) translateX(5px);
+    object-position: 111% center;
+}
+
+/* Правое видео (Техника) */
+#ex1 .video-side video {
+    transform: scale(1.08) translateY(-4px) translateX(-6px);
+    object-position: 60% center;
+}
+
+/* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео */
+/* Левое видео */
+.video-front video {
     transform: scale(1.2) translateY(-11px);
-    object-position: 74% center; /* смещаем вправо, чтобы тело было в центре */
-  }
-  
-  .video-card {
+    object-position: 74% center;
+}
+
+/* Видео-карточка */
+.video-card {
     border-radius: 14px;
     overflow: hidden;
     background: #000;
     position: relative;
-    aspect-ratio: 9 / 16;
-    transition: transform 0.15s ease-out; /* для эффекта нажатия */
-  }
-  
-  /* лёгкий эффект нажатия */
-  .video-card:active {
+    aspect-ratio: 9 / 14;   /* ↓ ниже чем 9/16, видео меньше по высоте */
+    transition: transform 0.15s ease-out;
+}
+
+.video-card:active {
     transform: scale(0.97);
-  }
-  
-  .video-card video,
-  .video-card img {
+}
+
+.video-card video,
+.video-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-  }
-  
-  /* Центрирование правого видео */
-  .video-side video {
+}
+
+/* Правое видео */
+.video-side video {
     object-position: 57% center;
-  }
-  
-  /* Подписи */
-  .video-caption {
+}
+/* ==== Горизонтальные видео ==== */
+
+.video-card.video-horizontal {
+    aspect-ratio: 16 / 9;       /* нормальное соотношение для горизонта */
+    overflow: hidden;
+}
+
+.video-card.video-horizontal video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* растягивает красиво */
+    object-position: center;    /* центр */
+    transform: scale(1.2);      /* немного приблизить, чтобы убрать черные края */
+}
+
+/* Подписи */
+.video-caption {
     position: absolute;
     left: 6px;
     bottom: 6px;
@@ -236,5 +282,147 @@
     text-align: center;
     font-weight: 500;
     letter-spacing: 0.2px;
+}
+.section-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+    margin: 20px 0 12px;
+    background: linear-gradient(90deg, #b12652, #a343c9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+}
+/* ===== Поиск по упражнениям (шапка) ===== */
+/* Плавающая кнопка поиска */
+/* ====== ПОИСК ====== */
+
+/* ===== Поисковая капсула ===== */
+/* === SEARCH BAR === */
+
+.search-bar {
+    position: sticky;
+    top: 8px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 10px;
+    width: 44px; /* только круг — в закрытом состоянии */
+    height: 44px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+
+    cursor: pointer;
+
+    transition:
+        width 0.35s ease,
+        padding 0.35s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* раскрытая строка поиска */
+.search-bar.open {
+    width: 95%; /* растягиваем плавно */
+    padding: 6px 16px;
+}
+
+/* Лупа */
+.search-toggle img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* поле ввода */
+.search-input {
+    border: none;
+    outline: none;
+
+    width: 0;
+    opacity: 0;
+    background: transparent;
+
+    font-size: 15px;
+    color: #3a163c;
+
+    transition:
+        width 0.35s ease,
+        opacity 0.25s ease;
+}
+
+/* открытие */
+.search-input.open {
+    width: 100%;
+    opacity: 1;
+}
+
+.search-input::placeholder {
+    color: #b58db8;
+}
+.search-toggle {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 6px;
+    padding: 0;
+}
+.search-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+.search-toggle img {
+    border: none;
+    outline: none;
+    display: block;
+}
+
+
+
+
+
+
+/* один блок видео в строке */
+.videos-row--single {
+    grid-template-columns: 1fr;
   }
   
+  /* карточка под горизонтальное видео */
+  .video-card.video-horizontal {
+    aspect-ratio: 16 / 9;   /* нормальный горизонтальный формат */
+    overflow: hidden;
+  }
+  
+  /* само видео — без увеличения, центр по вертикали */
+  .video-card.video-horizontal video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* заполняет карточку */
+    object-position: 50% 60%;  /* можно играться: 50% 50%, 50% 70% и т.п. */
+    transform: none;        /* убрали scale(1.2) */
+  }
+  
+
+
+
+  .video-single {
+    display: flex;
+    justify-content: center;
+}
+
+.video-single .video-card {
+    width: 55%;        /* можно менять: 100%, 80%, 60% */
+    max-width: 400px;  /* ограничение, чтобы красиво */
+}
