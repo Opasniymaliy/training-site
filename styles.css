@@ -206,74 +206,63 @@ body {
 /* ex3 — ЯГОДИЧНЫЙ МОСТ */
 
 /* Левое видео (Положение) */
-#ex3 .video-front video {
-    transform: scale(1.07) translateY(-7px) translateX(-1px);
-    object-position: 111% center;
-}
-
-/* Правое видео (Техника) */
-#ex3 .video-side video {
-    transform: scale(1.08) translateY(-4px) translateX(-6px);
-    object-position: 60% center;
-}
-
-#ex1 .video-front video {
-    transform: scale(1.07) translateY(-7px) translateX(5px);
-    object-position: 111% center;
-}
-
-/* Правое видео (Техника) */
-#ex1 .video-side video {
-    transform: scale(1.08) translateY(-4px) translateX(-6px);
-    object-position: 60% center;
-}
 
 /* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео */
 /* Левое видео */
-.video-front video {
-    transform: scale(1.2) translateY(-11px);
-    object-position: 74% center;
-}
+
 
 /* Видео-карточка */
+/* ==== БЛОК ВИДЕО (АККУРАТНЫЙ С КОНТРОЛАМИ) ==== */
+
+/* Карточка видео */
 .video-card {
     border-radius: 14px;
     overflow: hidden;
     background: #000;
     position: relative;
-    aspect-ratio: 9 / 14;   /* ↓ ниже чем 9/16, видео меньше по высоте */
+    aspect-ratio: 9 / 16;   /* твой формат под вертикальные */
     transition: transform 0.15s ease-out;
 }
 
+/* Клик — лёгкое нажатие карточки */
 .video-card:active {
     transform: scale(0.97);
 }
 
+/* Само видео / картинка внутри карточки */
 .video-card video,
 .video-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;      /* заполняет карточку без полос */
+    object-position: center;
+    display: block;
 }
 
-/* Правое видео */
+/* Левое вертикальное видео (можно чуть сдвинуть кадр) */
+.video-front video {
+    object-position: 74% center; /* можно играть: 70–80% */
+}
+
+/* Правое вертикальное */
 .video-side video {
     object-position: 57% center;
 }
+
 /* ==== Горизонтальные видео ==== */
 
 .video-card.video-horizontal {
-    aspect-ratio: 16 / 9;       /* нормальное соотношение для горизонта */
-    overflow: hidden;
+    aspect-ratio: 16 / 9;   /* нормальный формат 16:9 */
 }
 
+/* Горизонтальное видео внутри */
 .video-card.video-horizontal video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* растягивает красиво */
-    object-position: center;    /* центр */
-    transform: scale(1.2);      /* немного приблизить, чтобы убрать черные края */
+    object-fit: cover;
+    object-position: center;
+    /* БЕЗ transform, чтобы контролы не уезжали */
 }
+
+
 
 /* Подписи */
 .video-caption {
@@ -424,6 +413,9 @@ body {
 
 
 
+
+  /* ОДИИИИИИИИИЧНОЧНОЕ ВИДЕО ЦЕНТРОВКА */
+
   .video-single {
     display: flex;
     justify-content: center;
@@ -445,6 +437,10 @@ body {
 .single-video .video-card {
     max-width: 280px; /* можно изменить */
 }
+
+
+
+
 
 
 /*
