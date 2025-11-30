@@ -177,7 +177,14 @@ body {
     flex-shrink: 0;
 }
 
-/* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео *//* Видео */
+
+
+
+
+
+
+/* Видео */
+
 .videos-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -438,6 +445,9 @@ body {
 .single-video .video-card {
     max-width: 280px; /* можно изменить */
 }
+
+
+/*
 video::-webkit-media-controls {
     display: none !important;
 }

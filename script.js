@@ -1,193 +1,140 @@
+// script.js
+
 document.addEventListener("DOMContentLoaded", () => {
-    const searchBar   = document.querySelector(".search-bar");
-    const searchToggle = document.querySelector(".search-toggle");
-    const searchInput = document.querySelector(".search-input");
-    const exercises   = document.querySelectorAll(".exercise");
-  
-    if (!searchBar || !searchToggle || !searchInput) return;
-  
-    const TRANSITION_MS = 350; // должно совпадать с transition в CSS
-  
-    // ───────── ОТКРЫТИЕ ПОИСКА ─────────
-    function openSearch() {
-      searchBar.classList.add("open");
-      searchInput.classList.add("open");
-  
-      // чуть задержать, чтобы фокус не дёргал анимацию
-      setTimeout(() => {
-        searchInput.focus();
-      }, 150);
-    }
-  
-    // ───────── ПЛАВНОЕ ЗАКРЫТИЕ + СБРОС ─────────
-    function resetSearch() {
-      // запускаем анимацию закрытия
-      searchBar.classList.remove("open");
-      searchInput.classList.remove("open");
-  
-      // очищаем текст и подсветку ПОСЛЕ завершения анимации
+  const searchBar   = document.querySelector(".search-bar");
+  const searchToggle = document.querySelector(".search-toggle");
+  const searchInput  = document.querySelector(".search-input");
+  const navToggle    = document.querySelector("#navToggle");
+
+  if (!searchBar || !searchToggle || !searchInput) return;
+
+  // ======== БАЗА ВСЕХ УПРАЖНЕНИЙ (страница + якорь) ========
+  const EXERCISES = [
+    // ТРЕНИРОВКА 1
+    { title: "ПРИСЕДАНИЯ С ГАНТЕЛЯМИ", url: "index.html#ex1" },
+    { title: "Румынская тяга",         url: "index.html#ex2" },
+    { title: "ЯГОДИЧНЫЙ МОСТ",         url: "index.html#ex3" },
+    { title: "СКРУЧИВАНИЯ",            url: "index.html#ex4" },
+    { title: "ПЛАНКА",                 url: "index.html#ex5" },
+
+    // ТРЕНИРОВКА 2
+    { title: "ТЯГА ВЕРХНЕГО БЛОКА",           url: "index2.html#ex6" },
+    { title: "ТЯГА ГОРИЗОНТАЛЬНОГО БЛОКА",    url: "index2.html#ex7" },
+    { title: "ЖИМ ГАНТЕЛЕЙ СИДЯ",             url: "index2.html#ex8" },
+    { title: "ОТЖИМАНИЯ ОТ СКАМЬИ",           url: "index2.html#ex9" },
+    { title: "РАЗВЕДЕНИЕ ГАНТЕЛЕЙ В СТОРОНЫ", url: "index2.html#ex10" },
+    { title: "ПОДЪЕМ НОГ ЛЕЖА",               url: "index2.html#ex11" },
+
+    // ОПЦИОНАЛЬНЫЙ ДЕНЬ
+    { title: "ВЫПАДЫ НА МЕСТЕ",        url: "index3.html#ex12" },
+    { title: "МАХИ НОГОЙ НАЗАД",       url: "index3.html#ex13" },
+    { title: "ЯГОДИЧНЫЙ МОСТ",         url: "index3.html#ex14" },
+    { title: "ГИПЕРЭКСТЕНЗИЯ",         url: "index3.html#ex15" },
+    { title: "КАРДИО",                 url: "index3.html#ex16" }
+  ];
+
+  const TRANSITION_MS = 350;
+  const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+  const normalize = (str) =>
+    str
+      .toLowerCase()
+      .replace(/ё/g, "е")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  // ======== ОТКРЫТЬ / ЗАКРЫТЬ ПОИСК ========
+  function openSearch() {
+    // закрываем меню, если вдруг открыто
+    if (navToggle) navToggle.checked = false;
+
+    searchBar.classList.add("open");
+    searchInput.classList.add("open");
+
+    setTimeout(() => searchInput.focus(), 120);
+  }
+
+  function closeSearch(clear = true) {
+    searchBar.classList.remove("open");
+    searchInput.classList.remove("open");
+
+    if (clear) {
       setTimeout(() => {
         searchInput.value = "";
-        exercises.forEach(ex => ex.classList.remove("highlight"));
       }, TRANSITION_MS);
     }
-  
-    // клик по иконке лупы
-    searchToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-  
-      if (searchBar.classList.contains("open")) {
-        resetSearch();
-      } else {
-        openSearch();
+  }
+
+  // ======== ЗАПУСК ПОИСКА (по Enter) ========
+  function runSearch() {
+    const query = normalize(searchInput.value);
+    if (!query || query.length < 2) return;
+
+    // приоритет: сначала текущая страница, потом остальные
+    const sorted = [...EXERCISES].sort((a, b) => {
+      const aSame = a.url.startsWith(currentPage + "#");
+      const bSame = b.url.startsWith(currentPage + "#");
+      if (aSame === bSame) return 0;
+      return aSame ? -1 : 1;
+    });
+
+    const target = sorted.find((ex) =>
+      normalize(ex.title).includes(query)
+    );
+
+    if (!target) return;
+
+    const [page, hash] = target.url.split("#");
+
+    // если нужное упражнение на этой же странице
+    if (page === currentPage) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    });
-  
-    // клик по пустому месту страницы — закрыть поиск
-    document.addEventListener("click", (e) => {
-      if (!searchBar.contains(e.target)) {
-        resetSearch();
-      }
-    });
-  
-    // ───────── ПОИСК УПРАЖНЕНИЙ ─────────
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.trim().toLowerCase();
-  
-      if (query.length < 2) return; // игнорируем одиночные буквы
-  
-      exercises.forEach(ex => {
-        const titleEl = ex.querySelector(".exercise-title");
-        if (!titleEl) return;
-  
-        const title = titleEl.textContent.toLowerCase();
-  
-        if (title.includes(query)) {
-          // плавный скролл к упражнению
-          ex.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-  
-          // мягкая подсветка блока
-          ex.classList.add("highlight");
-          setTimeout(() => ex.classList.remove("highlight"), 2000);
-        }
-      });
-    });
+      closeSearch(); // убираем панель поиска
+    } else {
+      // другое html — просто переходим
+      window.location.href = target.url;
+    }
+    
+  }
+
+  // ======== СВЯЗКА ПОИСКА И НАВИГАЦИИ ========
+
+  // клик по иконке лупы
+  searchToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    if (searchBar.classList.contains("open")) {
+      closeSearch();
+    } else {
+      openSearch();
+    }
   });
-  document.querySelector('#ex3 .video-side video').playbackRate = 0.7;
-  document.querySelector('#ex3 .video-front video').playbackRate = 0.7;
 
-
-
-
-  
-document.addEventListener("DOMContentLoaded", () => {
-    const navToggle = document.querySelector(".nav-toggle-checkbox"); // чекбокс флажка
-    const searchBar = document.querySelector(".search-bar");
-    const searchInput = document.querySelector(".search-input");
-    const searchToggle = document.querySelector(".search-toggle");
-    const navLinks = document.querySelectorAll(".nav-floating-menu a");
-  
-    if (!navToggle) return;
-  
-    // === 1. ОТКРЫВАЕМ ПОИСК → ЗАКРЫВАЕМ НАВИГАЦИЮ ===
-    if (searchToggle) {
-      searchToggle.addEventListener("click", () => {
-        navToggle.checked = false; // свернули флажок
-      });
+  // клик вне панели поиска — закрыть поиск
+  document.addEventListener("click", (e) => {
+    if (!searchBar.contains(e.target)) {
+      closeSearch();
     }
-  
-    if (searchInput) {
-      searchInput.addEventListener("focus", () => {
-        navToggle.checked = false; // тоже свернуть, если сразу тыкнули в поле
-      });
-    }
-  
-    // === 2. ОТКРЫВАЕМ НАВИГАЦИЮ → ЗАКРЫВАЕМ ПОИСК ===
+  });
+
+  // когда открывают навигацию (чекбокс включился) — сворачиваем поиск
+  if (navToggle) {
     navToggle.addEventListener("change", () => {
       if (navToggle.checked) {
-        // навигация открыта — сворачиваем поиск
-        if (searchBar) searchBar.classList.remove("open");
-        if (searchInput) {
-          searchInput.classList.remove("open");
-          searchInput.value = "";
-          searchInput.blur();
-        }
+        closeSearch();
       }
     });
-  
-    // === 3. КЛИК ПО ПУНКТУ НАВИГАЦИИ → ЗАКРЫВАЕМ НАВИГАЦИЮ ===
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navToggle.checked = false;
-      });
-    });
+  }
+
+  // Enter в поле запускает поиск (по всем страницам)
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      runSearch();
+    }
   });
-  document.addEventListener("DOMContentLoaded", () => {
-    const navToggle = document.querySelector("#nav-toggle");            // чекбокс навигации
-    const navMenu   = document.querySelector(".nav-floating-menu");     // меню
-    const searchBar = document.querySelector(".search-bar");
-    const searchInput = document.querySelector(".search-input");
-    const searchToggle = document.querySelector(".search-toggle");
-    const navLinks = document.querySelectorAll(".nav-floating-menu a");
-
-    // --- Если элементы не нашли (страница без них) — выходим ---
-    if (!navToggle || !navMenu) return;
-
-    // ============================================================
-    // 1. Открыли поиск → закрываем навигацию
-    // ============================================================
-    if (searchToggle) {
-        searchToggle.addEventListener("click", () => {
-            navToggle.checked = false;
-        });
-    }
-
-    if (searchInput) {
-        searchInput.addEventListener("focus", () => {
-            navToggle.checked = false;
-        });
-    }
-
-    // ============================================================
-    // 2. Клик по пустому месту — закрыть меню
-    // ============================================================
-    document.addEventListener("click", (e) => {
-        const clickedInsideMenu = navMenu.contains(e.target);
-        const clickedToggle = e.target.closest(".nav-toggle-btn");
-
-        if (!clickedInsideMenu && !clickedToggle) {
-            navToggle.checked = false;
-        }
-    });
-
-    // ============================================================
-    // 3. Клик по пункту меню → закрыть меню
-    // ============================================================
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            navToggle.checked = false;
-        });
-    });
-
-    // ============================================================
-    // 4. Открыли меню → закрываем поиск
-    // ============================================================
-    navToggle.addEventListener("change", () => {
-        if (navToggle.checked) {
-            if (searchBar) searchBar.classList.remove("open");
-            if (searchInput) {
-                searchInput.classList.remove("open");
-                searchInput.value = "";
-                searchInput.blur();
-            }
-        }
-    });
 });
-
-
-
-
-
