@@ -1,10 +1,13 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchBar   = document.querySelector(".search-bar");
+  const searchBar    = document.querySelector(".search-bar");
   const searchToggle = document.querySelector(".search-toggle");
   const searchInput  = document.querySelector(".search-input");
-  const navToggle    = document.querySelector("#navToggle");
+
+  const navToggle = document.querySelector("#navToggle");           // чекбокс
+  const navMenu   = document.querySelector(".nav-floating-menu");   // меню
+  const navButton = document.querySelector(".nav-toggle-btn");      // кнопка (бургер)
 
   if (!searchBar || !searchToggle || !searchInput) return;
 
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ======== ОТКРЫТЬ / ЗАКРЫТЬ ПОИСК ========
   function openSearch() {
-    // закрываем меню, если вдруг открыто
+    // если открыли поиск — закрываем меню
     if (navToggle) navToggle.checked = false;
 
     searchBar.classList.add("open");
@@ -87,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const [page, hash] = target.url.split("#");
 
-    // если нужное упражнение на этой же странице
     if (page === currentPage) {
       const el = document.getElementById(hash);
       if (el) {
@@ -95,13 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       closeSearch(); // убираем панель поиска
     } else {
-      // другое html — просто переходим
       window.location.href = target.url;
     }
-    
   }
 
-  // ======== СВЯЗКА ПОИСКА И НАВИГАЦИИ ========
+  // ======== ПОИСК: обработчики ========
 
   // клик по иконке лупы
   searchToggle.addEventListener("click", (e) => {
@@ -114,22 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // клик вне панели поиска — закрыть поиск
-  document.addEventListener("click", (e) => {
-    if (!searchBar.contains(e.target)) {
-      closeSearch();
-    }
-  });
-
-  // когда открывают навигацию (чекбокс включился) — сворачиваем поиск
-  if (navToggle) {
-    navToggle.addEventListener("change", () => {
-      if (navToggle.checked) {
-        closeSearch();
-      }
-    });
-  }
-
   // Enter в поле запускает поиск (по всем страницам)
   searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -137,4 +121,57 @@ document.addEventListener("DOMContentLoaded", () => {
       runSearch();
     }
   });
+
+  // ======== НАВИГАЦИЯ: открытие / закрытие ========
+
+  if (navToggle && navButton && navMenu) {
+    // Клик по кнопке (бургер)
+    navButton.addEventListener("click", (e) => {
+      e.preventDefault();      // отключаем стандартный toggle label'ом
+      e.stopPropagation();     // чтобы document.click не сработал на этот же клик
+
+      navToggle.checked = !navToggle.checked;
+
+      // если открыли меню — закрываем поиск
+      if (navToggle.checked) {
+        closeSearch();
+      }
+    });
+
+    // Клик по документу:
+    //  - закрывает поиск, если клик вне него
+    //  - закрывает меню, если оно открыто и клик вне меню/кнопки
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+
+      // --- закрытие поиска вне зоны ---
+      if (
+        !searchBar.contains(target) &&
+        !searchToggle.contains(target)
+      ) {
+        closeSearch();
+      }
+
+      // --- закрытие навигации одним тапом вне меню ---
+      if (navToggle.checked) {
+        const clickedOnButton = navButton.contains(target);
+        const clickedInsideMenu = navMenu.contains(target);
+
+        if (!clickedOnButton && !clickedInsideMenu) {
+          navToggle.checked = false;
+        }
+      }
+    });
+  } else {
+    // если навигации нет (на какой-то странице) — просто закрываем поиск по клику вне
+    document.addEventListener("click", (e) => {
+      const target = e.target;
+      if (
+        !searchBar.contains(target) &&
+        !searchToggle.contains(target)
+      ) {
+        closeSearch();
+      }
+    });
+  }
 });

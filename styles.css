@@ -301,19 +301,28 @@ body {
     position: sticky;
     top: 14px;
     z-index: 200;
+
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 
     padding: 6px 10px;
-    width: 44px; /* только круг — в закрытом состоянии */
-    height: 44px;
 
+    /* закрытое состояние — круг */
+    width: 44px;
+    height: 44px;
     border-radius: 999px;
 
-    background: rgba(255,255,255,0.32);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    /* стекло как у меню, но чуть плотнее по краям */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.78),
+        rgba(255, 255, 255, 0.66)
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
 
     cursor: pointer;
 
@@ -321,8 +330,10 @@ body {
         width 0.35s ease,
         padding 0.35s ease,
         background 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        border-radius 0.35s ease;
 }
+
 
 /* раскрытая строка поиска */
 .search-bar.open {
@@ -498,7 +509,7 @@ video::-webkit-media-controls-panel {
     justify-content: center;
   
     /* стеклянность */
-    background: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.541);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   
@@ -508,7 +519,7 @@ video::-webkit-media-controls-panel {
     line-height: 0;
   
     border: 1px solid rgba(255, 255, 255, 0.45);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   
     cursor: pointer;
   
@@ -537,31 +548,38 @@ video::-webkit-media-controls-panel {
 
 .nav-floating-menu {
     position: fixed;
-    top: 12px;           /* чуть ниже флажка */
+    top: 12px;
     right: 14px;
     z-index: 9998;
-  
+
     display: flex;
     flex-direction: column;
     gap: 4px;
-  
-    padding: 6px 8px;
-  
-    /* стекло как у поиска */
-    background: rgba(255, 255, 255, 0.32);
-    backdrop-filter: blur(12px);
+
+    padding: 8px 10px;
+
+    /* более прозрачное «premium glass» */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.78),
+        rgba(255, 255, 255, 0.68)
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
     border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+
     opacity: 0;
     pointer-events: none;
     transform: translateY(-6px);
     transform-origin: top right;
-  
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
-  }
+}
+
+
   /* Когда меню открыто — круг просто сливается с квадратом */
 /* Кнопка, когда меню открыто → полностью прозрачная */
 /* Когда навигация открыта — убираем обводку */
